@@ -19603,7 +19603,7 @@ var OidcClient = exports.OidcClient = function () {
         var stateApi = removeState ? stateStore.remove.bind(stateStore) : stateStore.get.bind(stateStore);
         return stateApi(stateKey).then(function (storedStateString) {
             if (!storedStateString) {
-                alert('ishan 2');
+                //alert('ishan 2');
                 _Log.Log.error("OidcClient.readSignoutResponseState: No matching state found in storage");
                 throw new Error("No matching state found in storage");
             }
