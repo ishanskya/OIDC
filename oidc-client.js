@@ -19493,7 +19493,7 @@ var OidcClient = exports.OidcClient = function () {
 
         var response = new _SigninResponse.SigninResponse(url, delimiter);
 
-        alert(response.state);
+        //alert(response.state);
         if (!response.state) {
             _Log.Log.error("OidcClient.readSigninResponseState: No state in response");
             return Promise.reject(new Error("No state in response"));
@@ -19507,12 +19507,11 @@ var OidcClient = exports.OidcClient = function () {
 
         return stateApi(response.state).then(function (storedStateString) {
             if (!storedStateString) {
-                alert('ishan 1');
                 _Log.Log.error("OidcClient.readSigninResponseState: No matching state found in storage");
                 throw new Error("No matching state found in storage");
             }
 
-            alert(storedStateString);
+            //alert(storedStateString);
 
             var state = _SigninState.SigninState.fromStorageString(storedStateString);
             return { state: state, response: response };
